@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental Payment</title>
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // Retrieve rental details from session storage
+        document.addEventListener('DOMContentLoaded', function() {
+            var rentalDetails = JSON.parse(sessionStorage.getItem('rentalDetails'));
+            if (rentalDetails) {
+                document.getElementById('customer_name').value = rentalDetails.cust_name;
+                document.getElementById('contact_number').value = '';
+                // Optionally, you can display the bike name and price
+                // Example: alert('You are renting: ' + rentalDetails.bike_name + ' for ' + rentalDetails.price);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Payment</h1>
+        <p>Please select your payment method:</p>
+
+        <form method="POST" action="{% url 'process_payment' %}">
+            {% csrf_token %}
+            
+            <div class="customer-details">
+                <label for="customer_name">Name:</label>
+                <input type="text" id="customer_name" name="customer_name" required placeholder="Enter your name">
+        
+                <label for="contact_number">Contact Number:</label>
+                <input type="tel" id="contact_number" name="contact_number" required placeholder="Enter your contact number" maxlength="10" minlength="10">
+            </div>
+        
+            <div class="payment-options">
+                <div class="option">
+                    <img src="{% static 'images/card-payment.jpg' %}" alt="Card Payment">
+                    <input type="radio" id="card" name="payment_method" value="card" required>
+                    <label for="card">
+                        <h2>Credit/Debit Card</h2>
+                    </label>
+                </div>
+                <div class="option">
+                    <img src="{% static 'images/paypal.jpg' %}" alt="PayPal">
+                    <input type="radio" id="paypal" name="payment_method" value="paypal" required>
+                    <label for="paypal">
+                        <h2>PayPal</h2>
+                    </label>
+                </div>
+                <div class="option">
+                    <img src="{% static 'images/cash-payment.jpeg' %}" alt="Cash Payment">
+                    <input type="radio" id="cash" name="payment_method" value="cash" required>
+                    <label for="cash">
+                        <h2>Cash on Delivery</h2>
+                    </label>
+                </div>
+            </div>
+        
+            <button type="submit" class="submit-button">Proceed to Checkout</button>
+        </form>
+    </div>
+</body>
+</html>

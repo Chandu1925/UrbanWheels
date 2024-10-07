@@ -1,0 +1,81 @@
+/* static/css/style.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column; /* Stack options vertically */
+    margin: 20px 0;
+}
+
+.option {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space between options */
+}
+
+.option img {
+    max-width: 100px; /* Set maximum width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and radio button */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+
+label {
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.customer-details {
+    margin-bottom: 20px; /* Space below customer details */
+}
+
+.customer-details label {
+    display: block; /* Make labels block-level elements */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+.customer-details input {
+    width: 95%; /* Make inputs full width */
+    padding: 10px; /* Add padding */
+    margin-bottom: 15px; /* Space between inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners */
+}

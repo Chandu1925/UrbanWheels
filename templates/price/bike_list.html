@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #rental-form {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #rental-form .form-group {
+            margin-bottom: 15px;
+        }
+        #rental-form label {
+            display: block;
+            margin-bottom: 10px;
+        padding: 0 10px;
+        }
+        #rental-form input, #rental-form select {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #rental-form button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<section id="rental-form">
+    <div class="container">
+        <h2>Rental Details</h2>
+        <form id="rental-details-form" method="post">
+            <div class="form-group">
+                <label for="cust_name">Name:</label>
+                <input type="text" id="cust_name" name="cust_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="bike_name">Bike Name:</label>
+                <select id="bike_name" name="bike_name">
+                    <option value="BMW">BMW</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Ducati">Ducati</option>
+                    <option value="Kawasaki">Kawasaki</option>
+                    <option value="Triumph">Triumph</option>
+                    <option value="Yamaha">Yamaha</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rental_type">Rental Type:</label>
+                <select id="rental_type" name="rental_type">
+                    <option value="hourly">Per Hour</option>
+                    <option value="daily">Per Day</option>
+                    <option value="monthly">Per Month</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" required>
+            </div>
+            <button type="button" onclick="check()">Submit Rental</button>
+        </form>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Dummy data for the example
+        var hourlyRate = "10.99";
+        var dailyRate = "60.99";
+        var monthlyRate = "995.99";
+
+        // Function to update the price based on the rental type
+        function updatePrice() {
+            var rentalType = $('#rental_type').val();
+            var priceField = $('#price');
+            switch (rentalType) {
+                case 'hourly':
+                    priceField.val('$' + hourlyRate);
+                    break;
+                case 'daily':
+                    priceField.val('$' + dailyRate);
+                    break;
+                case 'monthly':
+                    priceField.val('$' + monthlyRate);
+                    break;
+                default:
+                    priceField.val('');
+            }
+        }
+
+        // Bind change event to rental type dropdown
+        $('#rental_type').change(function() {
+            updatePrice();
+        });
+
+        // Initialize price field based on the initial rental type value
+        updatePrice();
+    });
+
+    function check() {
+        var cust_name = $('#cust_name').val();
+        var email = $('#email').val();
+        var bike_name = $('#bike_name').val();
+        var rental_type = $('#rental_type').val();
+        var price = $('#price').val().replace('$', ''); 
+
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'submit_rental' %}", 
+            data: {
+                "cust_name": cust_name,
+                "email": email,
+                "bike_name": bike_name,
+                "rental_type": rental_type,
+                "price": price
+            },
+            success: function(data) {
+                alert("Success");
+                window.location.href = "{% url 'payment_page' %}";
+            }
+        });
+    }
+</script>
+
+
+
+</body>
+</html>

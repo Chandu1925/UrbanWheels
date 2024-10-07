@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+            color: #333;
+        }
+        .table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+        }
+        .table thead {
+            background-color: #6a1b9a;
+            color: #fff;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+        .table tbody tr:hover {
+            background-color: #ddd;
+        }
+        .table th {
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+        }
+        .table td {
+            border-bottom: 1px solid #ddd;
+        }
+        .delete-btn {
+            background-color: #f44336; /* Red background */
+            color: white; /* White text */
+            border: none; /* Remove borders */
+            padding: 6px 12px; /* Add some padding */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make the button inline */
+            font-size: 14px; /* Set font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 4px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Action</th> <!-- Added column for action -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in userdata %}
+            <tr>
+                <td>{{ obj.username }}</td>
+                <td>{{ obj.password }}</td>
+                <td>{{ obj.role }}</td>
+                <td><button class="delete-btn" onclick="deleterecord('{{obj.username    }}');">Delete</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
+
+</thead>
+
+</table>
+
+<script>
+</script>
+</body>
+</html>

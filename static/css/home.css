@@ -1,0 +1,230 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar{
+    background:linear-gradient(to left,rgb(144, 142, 142),rgb(139, 131, 131));
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links{
+    display: flex;
+    padding: 10px 10px;
+    list-style: none;
+}
+
+ul li{
+    padding: 0 60px;
+    font-size: 20px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.logo img{
+    width: 180px;
+    height: 80px;
+}
+
+.btn{
+    height: 40px;
+    width: 70px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    margin-top:20px;
+    margin-right: 20px;
+    background: linear-gradient(to left,white,rgb(180, 170, 173));
+    translate: transform 0.2;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; 
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+  }
+  
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1; 
+}
+  
+.main h1 {
+    font-size: 60px;
+    padding: 10px 20px;
+    font-family: alisha;
+    border-radius: 20px;
+    margin: 0;
+    backdrop-filter: blur(5px);
+}
+
+
+
+#home{
+    box-shadow: 0 0 10px 0;
+    border-radius: 20px;
+    background: linear-gradient(to top,rgb(213, 224, 220),beige);
+    margin: 40px 30px ;
+    
+}
+
+#home h2{
+    padding-top:20px ;
+    text-align: center;
+    font-size: 40px;
+}
+
+.bike{
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.bike-list{
+    padding: 30px;
+    display: inline-block;
+    align-items: center;
+}
+
+.bike-card{
+    display: inline-block;
+    box-shadow: 0 0 10px 0;
+    width: 300px;
+    height: 450px;
+    margin: 10px 20px;
+    border-radius: 20px;
+    translate: transform 0.2;
+    overflow-x: auto ;
+    background-color: white;
+}
+
+.bike-card:hover{
+    transform: scale(1.1);
+}
+
+.bike-card img{
+    width: 100%;
+    height: 180px;
+    border-radius: 20px;
+}
+
+.bike-card h3,p{
+    padding: 10px 20px;
+    color: black;
+}
+
+.bike-card button{
+    margin-left: 115px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: beige;
+}
+
+#about-us{
+    margin: 30px;
+    height: 420px;
+    text-align: center;
+    width: fit-content;
+    font-size: 20px;
+    box-shadow: 0 0 5px 0;
+    border-radius: 20px;
+    translate: transform 0.1;
+    
+}
+
+#about-us:hover{
+    transform: scale(1.1);
+}
+#about-us h2{
+    font-family: chinese;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.abt{
+    background-color: aliceblue;
+    border-radius: 20px;
+    height: 280px;
+    display: flex;
+    padding: 20px 70px ;
+    margin: -15px 20px;
+    
+}
+.abt p{
+    padding: 70px 20px;
+    padding-left: 70px;
+}
+
+.abt img{
+    object-fit: cover;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #f1ddb28e;
+    text-align: center;
+    padding: 10px;
+}
+
+.social-icons{
+    width: fit-content;
+    margin-left:39% ;
+}
+
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 6px;
+    border-radius: 10px;
+  }
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+  
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: #cc1b5f;
+    color: white;
+}
+  

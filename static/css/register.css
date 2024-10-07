@@ -1,0 +1,121 @@
+/* Apply a light linear gradient background to the entire body */
+body {
+    background: linear-gradient(to top, #8fc2c9, rgb(227, 207, 247), #d3c2fc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the container to center the content */
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 570px;
+    margin: 30px 0px ;
+
+}
+
+.text-center{
+    display: flex;
+    justify-content: center;
+    padding: 13px;
+    
+}
+
+.img-fluid{
+    height: 50px;
+    width: 100px;
+    margin-top: -10px;
+    padding-bottom: -5px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style for the form container */
+.form-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -7px;
+}
+
+/* Style for the form wrapper */
+.form-wrapper {
+    width: 450px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 550px;
+
+}
+
+/* Add hover effect for the form */
+.form-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-outline{
+    width: 400px;
+    padding-left: 20px;
+
+}
+
+
+/* Ensure the image fits well within its container */
+.image-container img {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+/* Style the form labels and inputs */
+.form-outline .form-label {
+    color: #333;
+}
+
+.form-outline input.form-control-lg {
+    border-radius: 4px;
+}
+
+/* Style for the signup button */
+input[type="button"] {
+    width: 360px;
+    padding: 10px;
+    margin-left: 30px;   
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Change button color on hover */
+input[type="button"]:hover {
+    background-color: #005bb5;
+}
+
+/* Style for links */
+a {
+    color: #0072ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+select{
+    padding: 7px 10px;
+}

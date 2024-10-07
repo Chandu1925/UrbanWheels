@@ -1,0 +1,96 @@
+{% extends 'dashboard/admin.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th >Subject</th>
+                <th >Message</th>
+                <th colspan="2" >Action</th> 
+                <!-- Added column for action -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in userdata %}
+            <tr>
+                <td><input type="text" id="name{{ obj.name }}" value="{{ obj.name }}"> </td>
+                <td><input type="text" id="email{{ obj.name }}" value="{{ obj.email }}"></td>
+                <td><input type="text" id="subject{{ obj.name }}" value="{{ obj.subject }}"></td>
+                <td><input type="text" id="message{{ obj.name }}" value="{{ obj.message }}"></td>
+                <td><button class="delete-btn" onclick="deleterecord('{{obj.name}}');">Delete</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+
+        function deleterecord(name)
+        {
+        console.log(name);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'delete_contact' %}",
+            data: {"name": name},
+            success: function(data)
+            {
+                console.log(data);
+                window.location.replace("/dashboard/view_contact");
+            }
+        });
+        }
+        
+    </script>
+
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .table thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .table th, .table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .table input[type="text"] {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .delete-btn {
+            background-color: #dc3545; /* Bootstrap Danger color */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+    </style>
+
+</body>
+{% endblock content %}

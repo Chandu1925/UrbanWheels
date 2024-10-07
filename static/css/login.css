@@ -1,0 +1,114 @@
+/* General Body Styles */
+body {
+    
+    font-family: 'Arial', sans-serif;
+}
+
+/* Center the Section */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #c1d4ff, #ad9ffc); 
+    height: 100%;
+}
+
+/* Container for form and image */
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 130px;
+}
+
+/* Login Form Container */
+.login-form-container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px; /* Fixed width */
+    padding:0 15px;
+    height: 605px; /* Fixed height */
+    margin-right: 5px; 
+    box-sizing: border-box; 
+}
+
+/* Logo Image */
+.logo-img {
+    max-width: 120px;
+    height: auto;
+}
+
+
+/* Form Elements */
+form .form-outline {
+    position: relative;
+}
+
+form .form-outline .form-control {
+    border-radius: 10px;
+}
+
+form .form-outline .form-label {
+    color: #333;
+}
+
+form .form-outline .invalid-feedback {
+    position: absolute;
+    bottom: -10px;
+}
+
+/* Button */
+.btn-primary {
+    background: linear-gradient(to left, #89aaf1, #763ecf);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to top, #538ff7, #6a11cb);
+}
+
+/* Image Styles */
+.bg-img {
+    width: 500px; /* Fixed width */
+    height: 550px; /* Fixed height */
+    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 15px;
+    margin-left: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+    .login-form-container {
+        margin: 20px;
+    }
+    .logo-img {
+        max-width: 100px;
+    }
+}
+
+
+/* Registration Prompt */
+.register-prompt {
+    padding-bottom: 40px;
+    text-align: center; /* Center-align the text */
+}
+
+.register-prompt p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Font size for the text */
+    color: #333; /* Text color */
+}
+
+.register-prompt a {
+    color: #2575fc; /* Link color */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.register-prompt a:hover {
+    text-decoration: underline; /* Underline link on hover */
+}
