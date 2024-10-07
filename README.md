@@ -12,3 +12,5 @@ steps to run project
 
 
 To acess dashboard type "dashboard" after server code.
+
+login 1: chandu, pwd - 1234 [acess to dashboard]
